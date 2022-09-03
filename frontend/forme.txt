@@ -1,0 +1,68 @@
+npm i live-server
+then in scripts add "start":"live-server src --verbose",
+
+when npm start -> start live-server
+
+link index.html to app.js using <script type="module" src="app.js"></script>
+in index.html in main tag give an id -> 'main-container'
+in app.js import Homepage and create a router function which get main element from index.html
+and main.innerHTML= HomePage.render()
+create Homepage as object with method render where import data, map over and render foreach 
+product html content
+in app.js crete an object called routes-> for Homepage and ProductPage
+
+in utils.js create a function which takes the url split by '/' and returns an object 
+of destructured url
+    export const parseRequestUrl = ()=>{
+    const url = document.location.hash.toLowerCase()
+    const request = url.split('/')
+    return {
+        resource: request[1],
+        id:request[2],
+        action:request[3]
+    }
+}
+
+ in app.js in router function rebuild the url based on parseRequestUrl function and compare that url 
+ against routes from app.js
+ set page based on parsedUrl and in main element call page.render()
+
+add eventListener on window, for routing->window.addEventListener('hashchange', router)
+
+create backend folder run npm init create server file
+install express
+set route app.get('/api/products', (req, res)=>{
+  res.send(data.products)
+})
+
+in frontend call fetch to get products from backendand install in backend cors to avoid cors policy errors
+
+in frontend install webpack ->  npm i -D webpack webpack-cli webpack-dev-server
+npm uninstall live-serverin frontend in packeage.json
+modify start script 
+"start":"webpack-dev-server --mode development --watch-content-base --open",
+move index.html style.css and images into frontend folder
+in frontend in index.html add this script 
+<script src="'main.js"></script> -> main.js will be created by webpack
+
+to use es6 syntax on backend install @babel/core @babel/node @babel/preset-env
+babel will transpile code from es6 to es5
+create in root folde a file .babelrc
+
+npm i eslint -> for error detection
+install eslint extension in vscode
+in root folder create .eslint.rc.js file
+npm i -D eslint-config-airbnb-base eslint-plugin-import
+
+ctrl+shift+p -open settings type json -> in json settings
+add this lines: "editor.formatOnSave": true,
+  "editor.codeActionsOnSave":{
+    "source.fixAll.eslint":true
+  },
+
+  npm i -D eslint-config-prettier -> for avoiding conflicts between prettier extension and eslint
+
+  add HTML&LESS grammar injections extension for highlight the html elements
+
+  create Rating component
+  create Product page
