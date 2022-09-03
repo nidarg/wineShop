@@ -6,7 +6,7 @@
   "proxy": "http://localhost:5000",
   "scripts": {
     "start": "webpack-dev-server --watch-content-base --open",
-    "build": "(SET INLINE_RUNTIME_CHUNK=false) &&  webpack --mode=production --output ./main.js",
+    "build": "webpack --mode=production --output ./main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
