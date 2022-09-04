@@ -3,12 +3,12 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 
 import path from 'path';
-// import {fileURLToPath} from 'url';
+import {fileURLToPath} from 'url';
 
-// const __filename = fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 
 
-// const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 import config from './config.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
