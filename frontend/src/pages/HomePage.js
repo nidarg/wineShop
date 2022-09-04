@@ -14,6 +14,9 @@ const HomePage = {
         }
         return `
             <ul class="products">
+            ${!products
+            `<div>...Wait for products</div>`
+            }
                 ${products && products.map(
                     (product)=> 
                     `
