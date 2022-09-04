@@ -48,9 +48,9 @@ cloudinary.config({
   api_secret:config.CLOUD_API_SECRET,
 })
 // app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
-app.use(express.static(path.resolve(__dirname, './frontend')));
+app.use(express.static(path.resolve(__dirname, '/frontend')));
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './frontend,index.html'));
+  res.sendFile(path.resolve(__dirname, '/frontend,index.html'));
 });
 app.use((err, req, res, next) => {
   const status = err.name && err.name === 'ValidationError' ? 400 : 500;
