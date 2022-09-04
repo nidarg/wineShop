@@ -14,7 +14,7 @@ const HomePage = {
         }
         return `
             <ul class="products">
-                ${products.map(
+                ${products && products.map(
                     (product)=> 
                     `
                         <li>
